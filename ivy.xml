@@ -6,7 +6,5 @@
 	<dependencies>
 		<dependency org="junit" name="junit" rev="4.10" />
 		<dependency org="org.jbehave" name="jbehave-core" rev="3.6-beta-3" />
-        <dependency org="org.jbehave" name="jbehave-guice" rev="3.6-beta-3" />
-        <dependency org="com.google.guava" name="guava" rev="r09"/>
 	</dependencies>
 </ivy-module>
