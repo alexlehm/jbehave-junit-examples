@@ -17,5 +17,15 @@ tracking the individual steps. An EmbedderMonitor doesn't work for
 this either since it doesn't report the necessary events, maybe
 something else could be implemented.
 
-
+Please note that I currently use Ivy for Eclipse to build my
+projects, this will work with maven or anything else as well, you
+just need the two classes MyStoryReporter and
+ReportingAnnotatedPathRunner in the same directory as your
+StoriesRunner. If you are using a DI framework, you have to change
+the parent class for ReportingAnnotatedPathRunner to e.g.
+GuiceAnnotatedPathRunner, everything else in the class should be the
+same for all frameworks (have only tested that with Guice yet). To
+connect the reporter to the StoryReporterBuilder only
+.withReporters(MyStoryReporter.getInstance()) is necesary (where
+this shows up depends on the DI framework again).
 
