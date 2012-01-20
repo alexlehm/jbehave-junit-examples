@@ -1,4 +1,8 @@
-package runner;
+/*
+ * please refer to the file LICENSE.txt
+ */
+
+ package runner;
 
 import java.util.List;
 import java.util.Map;

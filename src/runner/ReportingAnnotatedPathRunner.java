@@ -1,4 +1,8 @@
-package runner;
+/*
+ * please refer to the file LICENSE.txt
+ */
+
+ package runner;
 
 import org.jbehave.core.junit.AnnotatedPathRunner;
 import org.junit.runner.notification.RunNotifier;
@@ -20,6 +24,5 @@ public class ReportingAnnotatedPathRunner extends AnnotatedPathRunner {
     MyStoryReporter.registerTestClass(testClass);
     super.run(notifier);
   }
-
   
 }

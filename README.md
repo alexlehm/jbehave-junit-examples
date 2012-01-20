@@ -29,3 +29,12 @@ connect the reporter to the StoryReporterBuilder only
 .withReporters(MyStoryReporter.getInstance()) is necesary (where
 this shows up depends on the DI framework again).
 
+This project currently lives at
+https://github.com/alexlehm/jbehave-junit-examples
+
+Please refer to the file LICENSE.txt (files authored by me) or to
+LICENSE-jbehave.txt (files changed by me) both licenses are identical
+except for the author name.
+
+If you have any questions, please send me a mail to alexlehm(at)gmail.com
+

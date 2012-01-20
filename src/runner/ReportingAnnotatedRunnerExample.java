@@ -1,3 +1,7 @@
+/*
+ * please refer to the file LICENSE-jbehave.txt
+ */
+
 package runner;
 
 import org.jbehave.core.annotations.Configure;

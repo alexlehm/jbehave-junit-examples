@@ -1,3 +1,7 @@
+/*
+ * please refer to the file LICENSE.txt
+ */
+
 package steps;
 
 import org.jbehave.core.annotations.Given;
