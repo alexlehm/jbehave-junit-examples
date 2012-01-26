@@ -130,8 +130,10 @@ public class MyStoryReporter implements StoryReporter {
   public void example(Map<String, String> paramMap) {
     log("example: "+paramMap.toString());
     finishPreviousScenario();
-    Description desc=Description.createTestDescription(testClass, (inScenario+": "+paramMap.toString()).replace('(', '[').replace(')', ']'));
-    notifier.fireTestStarted(desc);
+    Description desc=Description.createTestDescription(testClass!=null ? testClass : this.getClass(), (inScenario+": "+paramMap.toString()).replace('(', '[').replace(')', ']'));
+    if(notifier!=null) {
+      notifier.fireTestStarted(desc);
+    }
     scenarioFailed=false;
     activeDescription=desc;
   }
@@ -152,10 +154,14 @@ public class MyStoryReporter implements StoryReporter {
         log("scenarioFailed");
         // failureDescription doesn't work, apparently the description has to match for fireTestStarted and fireTestFailure
 //        Description failureDescription= Description.createTestDescription(testClass, scenarioFailedDescription);
-        notifier.fireTestFailure(new Failure(activeDescription, scenarioFailedTrace));
+        if(notifier!=null) {
+          notifier.fireTestFailure(new Failure(activeDescription, scenarioFailedTrace));
+        }
       } else {
         log("scenarioSuccess");
-        notifier.fireTestFinished(activeDescription);
+        if(notifier!=null) {
+          notifier.fireTestFinished(activeDescription);
+        }
       }
       activeDescription=null;
     } else {
